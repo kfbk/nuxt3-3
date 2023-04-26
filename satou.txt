@@ -1,0 +1,66 @@
+Nuxt3 + microCMS のブログ作成チュートリアル
+https://blog.microcms.io/nuxt3-jamstack-blog/
+
+	nuxt3-app2では次のようにインストール
+	（sever\apiを使っているので、Netlifyで動かない）
+		yarn add microcms-js-sdk
+	当サイトでは次のようにインストール
+	（sever\apiを使っていないので、Netlifyで動くか？）
+		npm install nuxt-microcms-module
+
+
+Nuxtのセットアップ
+	npx nuxi init nuxt3-app3
+	cd nuxt3-app3
+	npm install
+	npm run dev
+microCMSの準備
+APIキーとサービスドメイン（テンプレートからblogを選択）
+	サービス名	てすと
+	サービスID	nuxt3-3
+  .env
+	MICROCMS_SERVICE_DOMAIN=nuxt3-3
+	MICROCMS_API_KEY=oHB0I5tSnutFTWelVmzIB5x7ctGXJ1RIfe9R
+microCMSモジュールの導入
+	npm install nuxt-microcms-module
+	Configurationにモジュールを追加
+---ここでVercelにデプロイ
+githubにリポジトリを用意
+	http	https://github.com/kfbk/nuxt3-3.git
+githubにプッシュ
+	git init
+	git remote add origin https://github.com/kfbk/nuxt3-3.git
+	git branch -M main
+
+　　次の指令は行うとエラーが出るのでスキップする
+	git push -u origin main
+		error: src refspec main does not match any
+
+	git add .
+	git commit -m "first"
+	git push -u origin main
+
+microCMSで取得できるコンテンツの型情報を作成
+記事一覧ページの作成
+
+---ここから Netlify へのデプロイ
+githubにリポジトリを用意（あえてフォルダー名を変える）
+	http	https://github.com/kfbk/nuxt3-3.git
+githubにプッシュ
+	git init
+	git remote add origin https://github.com/kfbk/nuxt3-3.git
+	git branch -M main
+
+　　次の指令は行うとエラーが出るのでスキップする
+	git push -u origin main
+		error: src refspec main does not match any
+
+	git add .
+	git commit -m "first"
+	git push -u origin main
+Netlify
+	Newして選んで、設定は変えずデプロイ
+	https://resonant-clafoutis-2e9046.netlify.app/ でOK
+
+---ここから元に戻る
+
